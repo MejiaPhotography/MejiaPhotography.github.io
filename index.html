@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mejia Photography | Portraits, Real Estate & Outdoor Photography</title>
+  <meta name="description" content="Mejia Photography offers portrait sessions, graduation and senior portraits, pet photography, real estate photography, and hiking & outdoor event photography.">
+  <link rel="canonical" href="https://mejia-photography.com/">
+
+  <!-- Fonts (remove these two lines + change --font-* below if you'd rather use system fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       EASY CUSTOMIZATION: change colors, fonts, and spacing here
+       ========================================================= */
+    :root {
+      --bg:        #faf8f5;   /* page background */
+      --bg-alt:    #f1ede6;   /* alternate section background */
+      --ink:       #1f1f1d;   /* main text */
+      --muted:     #6b675f;   /* secondary text */
+      --accent:    #3f5a45;   /* buttons, links (forest green) */
+      --accent-ink:#ffffff;   /* text on accent */
+      --line:      #ddd7cc;   /* borders */
+      --font-head: "Cormorant Garamond", Georgia, serif;
+      --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --max:       1120px;    /* content width */
+      --radius:    4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: var(--font-body); font-weight: 300; line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--font-head); font-weight: 500; line-height: 1.15; margin: 0 0 .5em; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); }
+    h2 { font-size: clamp(2rem, 4vw, 2.8rem); }
+    h3 { font-size: 1.5rem; }
+    p  { margin: 0 0 1em; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+    section { padding: 88px 0; }
+    .alt { background: var(--bg-alt); }
+    .eyebrow { text-transform: uppercase; letter-spacing: .18em; font-size: .75rem; font-weight: 500; color: var(--accent); margin-bottom: 14px; }
+    .section-head { max-width: 640px; margin-bottom: 44px; }
+    .section-head p { color: var(--muted); }
+
+    .btn {
+      display: inline-block; padding: 14px 28px; background: var(--accent); color: var(--accent-ink);
+      text-decoration: none; font-weight: 500; font-size: .9rem; letter-spacing: .04em;
+      border: 1px solid var(--accent); border-radius: var(--radius); cursor: pointer; font-family: inherit;
+      transition: opacity .2s;
+    }
+    .btn:hover { opacity: .88; }
+    .btn.ghost { background: transparent; color: inherit; border-color: currentColor; }
+
+    /* ---------- Header / Nav ---------- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(250,248,245,.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .logo { font-family: var(--font-head); font-size: 1.55rem; font-weight: 600; text-decoration: none; letter-spacing: .01em; }
+    .logo span { color: var(--accent); }
+    .nav ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
+    .nav ul a { text-decoration: none; font-size: .88rem; letter-spacing: .05em; }
+    .nav ul a:hover { color: var(--accent); }
+    .menu-btn { display: none; background: none; border: 0; font-size: 1.6rem; cursor: pointer; color: inherit; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      padding: 0; min-height: 82vh; display: flex; align-items: center; color: #fff; position: relative;
+      /* Save your best photo as images/hero.jpg and it appears here automatically */
+      background: url("images/hero.jpg") center / cover no-repeat,
+                  linear-gradient(135deg, #2f4535 0%, #52705a 45%, #8aa08a 100%);
+    }
+    .hero::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.28); }
+    .hero .wrap { position: relative; padding-top: 80px; padding-bottom: 80px; }
+    .hero p { max-width: 520px; font-size: 1.1rem; opacity: .95; }
+    .hero .btn { background: #fff; color: var(--ink); border-color: #fff; margin-right: 10px; }
+    .hero .btn.ghost { background: transparent; color: #fff; border-color: #fff; }
+
+    /* ---------- Services ---------- */
+    /* Cards wrap and center, so 5 (or any number of) services look balanced */
+    .cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; }
+    .cards > * { flex: 0 1 calc((100% - 56px) / 3); }
+    .card { background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+    .card .thumb { aspect-ratio: 4/3; position: relative; overflow: hidden; }
+    .card .thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .card .body { padding: 26px; display: flex; flex-direction: column; flex: 1; }
+    .card ul { padding-left: 18px; color: var(--muted); font-size: .95rem; margin: 0 0 20px; }
+    .card .link { margin-top: auto; color: var(--accent); font-weight: 500; text-decoration: none; font-size: .9rem; }
+
+    /* ---------- Placeholder blocks (delete once you add real photos) ---------- */
+    .ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+          color: rgba(255,255,255,.85); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; text-align: center; padding: 10px; }
+    .ph.p  { background: linear-gradient(135deg, #8a6f5a, #c4a58a); }
+    .ph.re { background: linear-gradient(135deg, #4b5d73, #8fa3b8); }
+    .ph.o  { background: linear-gradient(135deg, #3f5a45, #86a58b); }
+    .ph.g  { background: linear-gradient(135deg, #5a4a73, #a594c4); }
+    .ph.pet{ background: linear-gradient(135deg, #a8693f, #e0b184); }
+
+    /* ---------- Portfolio ---------- */
+    .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+    .filters button {
+      background: none; border: 1px solid var(--line); padding: 8px 20px; border-radius: 999px;
+      font-family: inherit; font-size: .85rem; cursor: pointer; color: var(--ink);
+    }
+    .filters button.active, .filters button:hover { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .item { margin: 0; position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: var(--radius); cursor: zoom-in; background: var(--line); }
+    .item.wide { grid-column: span 2; aspect-ratio: 8/5; }
+    .item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .item:hover img, .item:hover .ph { transform: scale(1.04); }
+    .item .ph { transition: transform .5s; }
+    .item figcaption {
+      position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 12px; color: #fff; font-size: .8rem; letter-spacing: .06em;
+      background: linear-gradient(transparent, rgba(0,0,0,.55)); opacity: 0; transition: opacity .3s;
+    }
+    .item:hover figcaption { opacity: 1; }
+    .item.hide { display: none; }
+
+    /* ---------- About ---------- */
+    .about { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; }
+    .about .photo { aspect-ratio: 4/5; border-radius: var(--radius); overflow: hidden; position: relative; }
+    .about .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ---------- Packages ---------- */
+    .price-card { padding: 30px; border: 1px solid var(--line); background: var(--bg); border-radius: var(--radius); }
+    .price-card .price { font-family: var(--font-head); font-size: 2.2rem; margin: 6px 0 14px; }
+    .price-card ul { padding-left: 18px; color: var(--muted); font-size: .95rem; margin: 0; }
+    .note { color: var(--muted); font-size: .9rem; margin-top: 22px; }
+
+    /* ---------- Contact ---------- */
+    .contact { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; }
+    .contact-info p { color: var(--muted); }
+    form { display: grid; gap: 16px; }
+    label { font-size: .82rem; letter-spacing: .05em; font-weight: 500; display: grid; gap: 6px; }
+    input, select, textarea {
+      font: inherit; font-weight: 300; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius);
+      background: #fff; color: var(--ink); width: 100%;
+    }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ---------- Footer ---------- */
+    footer { background: var(--ink); color: #cfcabf; padding: 40px 0; font-size: .85rem; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+    footer a { text-decoration: none; margin-left: 18px; }
+    footer a:hover { color: #fff; }
+
+    /* ---------- Lightbox ---------- */
+    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.9); display: none; align-items: center; justify-content: center; z-index: 100; padding: 24px; cursor: zoom-out; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-height: 92vh; max-width: 92vw; object-fit: contain; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 860px) {
+      section { padding: 64px 0; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .cards > * { flex-basis: calc((100% - 28px) / 2); }
+      .about, .contact { grid-template-columns: 1fr; gap: 32px; }
+      .menu-btn { display: block; }
+      .nav ul {
+        display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg);
+        flex-direction: column; gap: 0; border-bottom: 1px solid var(--line);
+      }
+      .nav ul.open { display: flex; }
+      .nav ul li a { display: block; padding: 16px 20px; border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 560px) {
+      .grid, .row { grid-template-columns: 1fr; }
+      .cards > * { flex-basis: 100%; }
+      .item.wide { grid-column: auto; aspect-ratio: 4/5; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="logo">Mejia<span> Photography</span></a>
+      <button class="menu-btn" aria-label="Toggle menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <ul id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow" style="color:#fff;opacity:.9">Portraits · Graduation · Pets · Real Estate · Outdoors</p>
+        <h1>Photography that tells<br>your story.</h1>
+        <p>From portrait sessions and property listings to trail-side adventure coverage, I capture the moments and spaces that matter.</p>
+        <a href="#contact" class="btn">Book a Session</a>
+        <a href="#portfolio" class="btn ghost">View Portfolio</a>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What I Do</p>
+          <h2>Ways we can work together</h2>
+          <p>Pick a service below, or reach out if you have something different in mind.</p>
+        </div>
+
+        <div class="cards">
+          <!-- Card 1: Portraits. Swap the .ph div for: <img src="images/portrait-card.jpg" alt="..."> -->
+          <article class="card">
+            <div class="thumb"><div class="ph p">Portrait photo</div><img src="images/portfolio/portraits-01.jpg" alt="Portrait photography" loading="lazy" onerror="this.remove()"></div>
+            <div class="body">
+              <h3>Portraits</h3>
+              <p>Natural, relaxed portraits at a park, downtown, or in the comfort of your home or studio.</p>
+              <ul>
+                <li>Individuals, couples & families</li>
+                <li>Headshots & personal branding</li>
+                <li>Outdoor or indoor sessions</li>
+              </ul>
+              <a class="link" href="#contact">Book a portrait session →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="ph g">Graduation photo</div><img src="images/portfolio/graduation-01.jpg" alt="Graduation photography" loading="lazy" onerror="this.remove()"></div>
+            <div class="body">
+              <h3>Graduation & Seniors</h3>
+              <p>Celebrate the milestone with polished, personality-filled portraits in cap and gown or your own style.</p>
+              <ul>
+                <li>Cap & gown and casual looks</li>
+                <li>On campus or a location you love</li>
+                <li>Outfit changes available</li>
+              </ul>
+              <a class="link" href="#contact">Book a grad or senior session →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="ph pet">Pet photo</div><img src="images/portfolio/pets-01.jpg" alt="Pet photography" loading="lazy" onerror="this.remove()"></div>
+            <div class="body">
+              <h3>Pets</h3>
+              <p>Playful, true-to-personality photos of your dog, cat, or other companion, wherever they're happiest.</p>
+              <ul>
+                <li>Pets on their own or with their people</li>
+                <li>Park, trail, or at-home sessions</li>
+                <li>Patient, pet-friendly pace</li>
+              </ul>
+              <a class="link" href="#contact">Book a pet session →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="ph re">Real estate photo</div><img src="images/portfolio/realestate-01.jpg" alt="Real estate photography" loading="lazy" onerror="this.remove()"></div>
+            <div class="body">
+              <h3>Real Estate</h3>
+              <p>Bright, clean, accurate photos that help listings stand out and sell faster.</p>
+              <ul>
+                <li>Interior & exterior photos</li>
+                <li>Fast turnaround</li>
+                <li>Listing-ready, edited images</li>
+              </ul>
+              <a class="link" href="#contact">Request a listing shoot →</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><div class="ph o">Outdoor photo</div><img src="images/portfolio/outdoors-01.jpg" alt="Hiking and outdoor photography" loading="lazy" onerror="this.remove()"></div>
+            <div class="body">
+              <h3>Hiking & Outdoors</h3>
+              <p>I join your hike or outdoor event and document it, so you get to enjoy the day and keep the memories.</p>
+              <ul>
+                <li>Group hikes & club events</li>
+                <li>Trail, summit & scenic shots</li>
+                <li>Action and candid coverage</li>
+              </ul>
+              <a class="link" href="#contact">Plan an adventure shoot →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PORTFOLIO ===================== -->
+    <section id="portfolio" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Recent work</h2>
+          <p>A selection from each category. Click any photo to enlarge.</p>
+        </div>
+
+        <div class="filters" role="tablist" aria-label="Filter portfolio">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="portraits">Portraits</button>
+          <button data-filter="graduation">Graduation & Seniors</button>
+          <button data-filter="pets">Pets</button>
+          <button data-filter="realestate">Real Estate</button>
+          <button data-filter="outdoors">Hiking & Outdoors</button>
+        </div>
+
+        <!--
+          HOW TO ADD PHOTOS (no code editing needed)
+          Save your photos in images/portfolio/ using the file names already in the
+          src="..." attributes below (e.g. portraits-01.jpg, pets-02.jpg). Any photo that
+          exists replaces its gray placeholder automatically; missing ones keep the placeholder.
+          Names: portraits-01..., graduation-01..., pets-01..., realestate-01..., outdoors-01...
+          Also supported: images/hero.jpg (top banner) and images/about.jpg (About photo).
+
+          TO ADD MORE PHOTOS: copy a whole <figure>...</figure> block, paste it below, and set
+          data-cat (portraits, graduation, pets, realestate, or outdoors) and the img src.
+          Use class="item wide" to make a photo span two columns (good for landscapes).
+        -->
+        <div class="grid" id="gallery">
+          <figure class="item" data-cat="portraits">
+            <div class="ph p">Portrait 01</div>
+            <img src="images/portfolio/portraits-01.jpg" alt="Portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Portraits: Fall session</figcaption>
+          </figure>
+          <figure class="item wide" data-cat="outdoors">
+            <div class="ph o">Outdoor 01 (wide)</div>
+            <img src="images/portfolio/outdoors-01.jpg" alt="Hiking and outdoors" loading="lazy" onerror="this.remove()">
+            <figcaption>Hiking: Summit view</figcaption>
+          </figure>
+          <figure class="item" data-cat="realestate">
+            <div class="ph re">Real Estate 01</div>
+            <img src="images/portfolio/realestate-01.jpg" alt="Real estate interior" loading="lazy" onerror="this.remove()">
+            <figcaption>Real Estate: Living room</figcaption>
+          </figure>
+          <figure class="item" data-cat="portraits">
+            <div class="ph p">Portrait 02</div>
+            <img src="images/portfolio/portraits-02.jpg" alt="Portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Portraits: Couple session</figcaption>
+          </figure>
+          <figure class="item" data-cat="outdoors">
+            <div class="ph o">Outdoor 02</div>
+            <img src="images/portfolio/outdoors-02.jpg" alt="Hiking and outdoors" loading="lazy" onerror="this.remove()">
+            <figcaption>Hiking: On the trail</figcaption>
+          </figure>
+          <figure class="item wide" data-cat="realestate">
+            <div class="ph re">Real Estate 02 (wide)</div>
+            <img src="images/portfolio/realestate-02.jpg" alt="Real estate exterior" loading="lazy" onerror="this.remove()">
+            <figcaption>Real Estate: Exterior</figcaption>
+          </figure>
+          <figure class="item" data-cat="graduation">
+            <div class="ph g">Graduation 01</div>
+            <img src="images/portfolio/graduation-01.jpg" alt="Graduation portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Graduation: Cap & gown</figcaption>
+          </figure>
+          <figure class="item" data-cat="pets">
+            <div class="ph pet">Pet 01</div>
+            <img src="images/portfolio/pets-01.jpg" alt="Pet portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Pets: Park portrait</figcaption>
+          </figure>
+          <figure class="item" data-cat="graduation">
+            <div class="ph g">Senior 01</div>
+            <img src="images/portfolio/graduation-02.jpg" alt="Senior portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Seniors: Golden hour</figcaption>
+          </figure>
+          <figure class="item wide" data-cat="pets">
+            <div class="ph pet">Pet 02 (wide)</div>
+            <img src="images/portfolio/pets-02.jpg" alt="Pet portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Pets: Action shot</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+      <div class="wrap about">
+        <div class="photo">
+          <!-- Replace with: <img src="images/about.jpg" alt="Portrait of Mejia"> -->
+          <div class="ph p" style="height:100%">Your photo here</div>
+          <img src="images/about.jpg" alt="Photographer portrait" loading="lazy" onerror="this.remove()">
+        </div>
+        <div>
+          <p class="eyebrow">About</p>
+          <h2>Hi, I'm [Your First Name].</h2>
+          <p>[Write 2–3 short paragraphs here. Who you are, how you got into photography, and what you love about each type of work. Keep it personal and conversational.]</p>
+          <p>Based in New Jersey and available for sessions across the area (and travel by request).</p>
+          <a href="#contact" class="btn">Let's work together</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PACKAGES ===================== -->
+    <section id="packages" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Packages</p>
+          <h2>Simple, transparent pricing</h2>
+          <p>Placeholder pricing: edit the numbers and details to match your own packages, or delete this section until you're ready.</p>
+        </div>
+        <div class="cards">
+          <div class="price-card">
+            <h3>Portrait Session</h3>
+            <div class="price">$000</div>
+            <ul>
+              <li>[X]-minute session</li>
+              <li>[X] edited digital photos</li>
+              <li>Online gallery</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Real Estate Shoot</h3>
+            <div class="price">$000</div>
+            <ul>
+              <li>Up to [X] sq ft</li>
+              <li>[X] edited photos</li>
+              <li>[X]-hour turnaround</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Hike / Event Coverage</h3>
+            <div class="price">$000</div>
+            <ul>
+              <li>Up to [X] hours on location</li>
+              <li>[X]+ edited photos</li>
+              <li>Shared gallery for your group</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Graduation & Senior Session</h3>
+            <div class="price">$000</div>
+            <ul>
+              <li>[X]-minute session</li>
+              <li>[X] outfit changes / locations</li>
+              <li>[X] edited digital photos</li>
+            </ul>
+          </div>
+          <div class="price-card">
+            <h3>Pet Session</h3>
+            <div class="price">$000</div>
+            <ul>
+              <li>[X]-minute session</li>
+              <li>[X] edited digital photos</li>
+              <li>Online gallery</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Custom projects and multi-service bundles are available. Just ask.</p>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact">
+      <div class="wrap contact">
+        <div class="contact-info">
+          <p class="eyebrow">Contact</p>
+          <h2>Let's plan your shoot</h2>
+          <p>Tell me a bit about what you have in mind and I'll get back to you within [1–2 business days].</p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:hello@mejia-photography.com">hello@mejia-photography.com</a><br>
+            <strong>Phone:</strong> <a href="tel:+18622100190">862-210-0190</a><br>
+            <strong>Instagram:</strong> <a href="https://instagram.com/carlos.mejia.photography" target="_blank" rel="noopener">@carlos.mejia.photography</a>
+          </p>
+        </div>
+
+        <!--
+          FORM SETUP: A plain HTML file can't send email by itself.
+          Easiest option: create a free form at formspree.io, then replace YOUR_FORM_ID below.
+          (Other options: Netlify Forms, Getform, or your host's form feature.)
+        -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="row">
+            <label>Name <input type="text" name="name" required></label>
+            <label>Email <input type="email" name="email" required></label>
+          </div>
+          <div class="row">
+            <label>Service
+              <select name="service">
+                <option>Portraits</option>
+                <option>Graduation / Senior Portraits</option>
+                <option>Pet Photography</option>
+                <option>Real Estate</option>
+                <option>Hiking / Outdoor Event</option>
+                <option>Something else</option>
+              </select>
+            </label>
+            <label>Preferred date <input type="date" name="date"></label>
+          </div>
+          <label>Message <textarea name="message" rows="5" placeholder="Location, group size, property address, ideas, etc."></textarea></label>
+          <button class="btn" type="submit">Send inquiry</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="wrap">
+      <div>© <span id="year"></span> Mejia Photography. All rights reserved.</div>
+      <div>
+        <a href="https://instagram.com/carlos.mejia.photography" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
+        <a href="mailto:hello@mejia-photography.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox"><img alt=""></div>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Close mobile menu after tapping a link
+    document.querySelectorAll('#menu a').forEach(a =>
+      a.addEventListener('click', () => document.getElementById('menu').classList.remove('open')));
+
+    // Portfolio filter
+    const buttons = document.querySelectorAll('.filters button');
+    const items = document.querySelectorAll('#gallery .item');
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      items.forEach(it => it.classList.toggle('hide', f !== 'all' && it.dataset.cat !== f));
+    }));
+
+    // Lightbox (works once a figure contains a real <img>)
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    items.forEach(it => it.addEventListener('click', () => {
+      const img = it.querySelector('img');
+      if (!img) return;
+      lbImg.src = img.src; lbImg.alt = img.alt;
+      lb.classList.add('open');
+    }));
+    lb.addEventListener('click', () => lb.classList.remove('open'));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+  </script>
+</body>
+</html>

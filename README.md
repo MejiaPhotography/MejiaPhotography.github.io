@@ -12,9 +12,10 @@ Website for mejia-photography.com (single-page static site: `index.html` + an `i
 
 ### Replace a placeholder or an existing photo
 1. Save your photo in `images/portfolio/` using one of these names:
-   `portraits-01.jpg`, `portraits-02.jpg`, `graduation-01.jpg`, `graduation-02.jpg`,
-   `pets-01.jpg`, `pets-02.jpg`, `realestate-01.jpg`, `realestate-02.jpg`,
-   `outdoors-01.jpg`, `outdoors-02.jpg`
+   `portraits-01.jpg`, `portraits-02.jpg`, `portraits-03.jpg`, `portraits-04.jpg`, `portraits-05.jpg`,
+   `graduation-01.jpg`, `graduation-02.jpg`,
+   `pets-01.jpg`, `pets-02.jpg`, `pets-03.jpg`, `pets-04.jpg`, `realestate-01.jpg`, `realestate-02.jpg`,
+   `outdoors-01.jpg`, `outdoors-02.jpg`, `outdoors-03.jpg`, `outdoors-04.jpg`
 2. That's it. A photo with a matching name replaces its gray placeholder automatically.
    Slots without a photo keep the placeholder. To swap an existing photo, save the new one with the same name.
 3. The `-01` photo of each category is also used as that service's card image in the Services section.

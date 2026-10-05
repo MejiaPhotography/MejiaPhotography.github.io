@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mejia Photography | Portraits, Real Estate & Outdoor Photography</title>
-  <meta name="description" content="Mejia Photography offers portrait sessions, graduation and senior portraits, pet photography, real estate photography, and hiking & outdoor event photography.">
+  <title>Mejia Photography | Portraits & Outdoor Photography</title>
+  <meta name="description" content="Mejia Photography offers portrait sessions, graduation and senior portraits, pet photography, and hiking & outdoor event photography.">
   <link rel="canonical" href="https://mejia-photography.com/">
 
   <!-- Fonts (remove these two lines + change --font-* below if you'd rather use system fonts) -->
@@ -131,9 +131,13 @@
     .about .photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 
     /* ---------- Packages ---------- */
-    .price-card { padding: 30px; border: 1px solid var(--line); background: var(--bg); border-radius: var(--radius); }
-    .price-card .price { font-family: var(--font-head); font-size: 2.2rem; margin: 6px 0 14px; }
+    .price-card { padding: 30px; border: 1px solid var(--line); background: var(--bg); border-radius: var(--radius); max-width: 340px; }
+    .price-card .price { font-family: var(--font-head); font-size: 2.2rem; margin: 6px 0 10px; }
+    .price-card .tagline { color: var(--muted); font-size: .9rem; margin: 0 0 16px; }
     .price-card ul { padding-left: 18px; color: var(--muted); font-size: .95rem; margin: 0; }
+    .price-card ul li { margin-bottom: 6px; }
+    .package-group { margin-bottom: 20px; }
+    .package-group + .package-group { margin-top: 56px; }
     .note { color: var(--muted); font-size: .9rem; margin-top: 22px; }
 
     /* ---------- Contact ---------- */
@@ -147,6 +151,10 @@
     }
     input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
     .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-status { display: none; margin: 4px 0 0; font-size: .9rem; }
+    .form-status.ok { display: block; color: var(--accent); }
+    .form-status.err { display: block; color: #a33; }
+    #contactForm.sent .row, #contactForm.sent label, #contactForm.sent button[type="submit"] { display: none; }
 
     /* ---------- Footer ---------- */
     footer { background: var(--ink); color: #cfcabf; padding: 40px 0; font-size: .85rem; }
@@ -203,7 +211,7 @@
     <!-- ===================== HERO ===================== -->
     <section class="hero">
       <div class="wrap">
-        <p class="eyebrow" style="color:#fff;opacity:.9">Portraits · Graduation · Pets · Real Estate · Outdoors</p>
+        <p class="eyebrow" style="color:#fff;opacity:.9">Portraits · Graduation · Pets · Outdoors</p>
         <h1>Photography that tells<br>your story.</h1>
         <p>From portrait sessions and property listings to trail-side adventure coverage, I capture the moments and spaces that matter.</p>
         <a href="#contact" class="btn">Book a Session</a>
@@ -264,6 +272,7 @@
             </div>
           </article>
 
+          <!-- Real Estate service hidden for now. Remove this comment to show it again.
           <article class="card">
             <div class="thumb"><div class="ph re">Real estate photo</div><img src="images/portfolio/realestate-01.jpg" alt="Real estate photography" loading="lazy" onerror="this.remove()"></div>
             <div class="body">
@@ -277,6 +286,7 @@
               <a class="link" href="#contact">Request a listing shoot →</a>
             </div>
           </article>
+          -->
 
           <article class="card">
             <div class="thumb"><div class="ph o">Outdoor photo</div><img src="images/portfolio/outdoors-01.jpg" alt="Hiking and outdoor photography" loading="lazy" onerror="this.remove()"></div>
@@ -309,8 +319,8 @@
           <button data-filter="portraits">Portraits</button>
           <button data-filter="graduation">Graduation & Seniors</button>
           <button data-filter="pets">Pets</button>
-          <button data-filter="realestate">Real Estate</button>
           <button data-filter="outdoors">Hiking & Outdoors</button>
+          <!-- Real Estate filter hidden for now: <button data-filter="realestate">Real Estate</button> -->
         </div>
 
         <!--
@@ -336,11 +346,13 @@
             <img src="images/portfolio/outdoors-01.jpg" alt="Hiking and outdoors" loading="lazy" onerror="this.remove()">
             <figcaption>Hiking: Summit view</figcaption>
           </figure>
+          <!-- Real Estate photos hidden for now. Remove this comment to show them again.
           <figure class="item" data-cat="realestate">
             <div class="ph re">Real Estate 01</div>
             <img src="images/portfolio/realestate-01.jpg" alt="Real estate interior" loading="lazy" onerror="this.remove()">
             <figcaption>Real Estate: Living room</figcaption>
           </figure>
+          -->
           <figure class="item" data-cat="portraits">
             <div class="ph p">Portrait 02</div>
             <img src="images/portfolio/portraits-02.jpg" alt="Portrait" loading="lazy" onerror="this.remove()">
@@ -351,11 +363,23 @@
             <img src="images/portfolio/outdoors-02.jpg" alt="Hiking and outdoors" loading="lazy" onerror="this.remove()">
             <figcaption>Hiking: On the trail</figcaption>
           </figure>
+          <figure class="item" data-cat="outdoors">
+            <div class="ph o">Outdoor 03</div>
+            <img src="images/portfolio/outdoors-03.jpg" alt="Hiking and outdoors" loading="lazy" onerror="this.remove()">
+            <figcaption>Hiking: Forest trail</figcaption>
+          </figure>
+          <figure class="item" data-cat="outdoors">
+            <div class="ph o">Outdoor 04</div>
+            <img src="images/portfolio/outdoors-04.jpg" alt="Hiking and outdoors" loading="lazy" onerror="this.remove()">
+            <figcaption>Hiking: Sunset ridge</figcaption>
+          </figure>
+          <!-- Hidden until a second real estate photo is ready. Remove this comment to show it again.
           <figure class="item wide" data-cat="realestate">
             <div class="ph re">Real Estate 02 (wide)</div>
             <img src="images/portfolio/realestate-02.jpg" alt="Real estate exterior" loading="lazy" onerror="this.remove()">
             <figcaption>Real Estate: Exterior</figcaption>
           </figure>
+          -->
           <figure class="item" data-cat="graduation">
             <div class="ph g">Graduation 01</div>
             <img src="images/portfolio/graduation-01.jpg" alt="Graduation portrait" loading="lazy" onerror="this.remove()">
@@ -376,6 +400,31 @@
             <img src="images/portfolio/pets-02.jpg" alt="Pet portrait" loading="lazy" onerror="this.remove()">
             <figcaption>Pets: Action shot</figcaption>
           </figure>
+          <figure class="item" data-cat="pets">
+            <div class="ph pet">Pet 03</div>
+            <img src="images/portfolio/pets-03.jpg" alt="Pet portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Pets: Studio session</figcaption>
+          </figure>
+          <figure class="item" data-cat="pets">
+            <div class="ph pet">Pet 04</div>
+            <img src="images/portfolio/pets-04.jpg" alt="Pet portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Pets: At home</figcaption>
+          </figure>
+          <figure class="item" data-cat="portraits">
+            <div class="ph p">Portrait 03</div>
+            <img src="images/portfolio/portraits-03.jpg" alt="Portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Portraits: Studio session</figcaption>
+          </figure>
+          <figure class="item" data-cat="portraits">
+            <div class="ph p">Portrait 04</div>
+            <img src="images/portfolio/portraits-04.jpg" alt="Portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Portraits: Outdoor session</figcaption>
+          </figure>
+          <figure class="item" data-cat="portraits">
+            <div class="ph p">Portrait 05</div>
+            <img src="images/portfolio/portraits-05.jpg" alt="Portrait" loading="lazy" onerror="this.remove()">
+            <figcaption>Portraits: Golden hour</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -390,8 +439,9 @@
         </div>
         <div>
           <p class="eyebrow">About</p>
-          <h2>Hi, I'm [Your First Name].</h2>
-          <p>[Write 2–3 short paragraphs here. Who you are, how you got into photography, and what you love about each type of work. Keep it personal and conversational.]</p>
+          <h2>Hi, I'm Carlos.</h2>
+          <p>I'm a New Jersey based photographer who loves spending time outdoors, and that love for the outdoors spills into my work behind the camera. There's nothing quite like being out in nature with a camera in hand, chasing good light and better moments.</p>
+          <p>What keeps me doing this is simple: making people happy. Whether it's a portrait session, a graduation milestone, a family pet, or a quiet moment on the trail, I love capturing the things and moments that bring joy, so you can hold on to them long after the day is over.</p>
           <p>Based in New Jersey and available for sessions across the area (and travel by request).</p>
           <a href="#contact" class="btn">Let's work together</a>
         </div>
@@ -404,55 +454,76 @@
         <div class="section-head">
           <p class="eyebrow">Packages</p>
           <h2>Simple, transparent pricing</h2>
-          <p>Placeholder pricing: edit the numbers and details to match your own packages, or delete this section until you're ready.</p>
+          <p>Standard session packages plus specialty rates for commercial and event work.</p>
         </div>
-        <div class="cards">
-          <div class="price-card">
-            <h3>Portrait Session</h3>
-            <div class="price">$000</div>
-            <ul>
-              <li>[X]-minute session</li>
-              <li>[X] edited digital photos</li>
-              <li>Online gallery</li>
-            </ul>
-          </div>
-          <div class="price-card">
-            <h3>Real Estate Shoot</h3>
-            <div class="price">$000</div>
-            <ul>
-              <li>Up to [X] sq ft</li>
-              <li>[X] edited photos</li>
-              <li>[X]-hour turnaround</li>
-            </ul>
-          </div>
-          <div class="price-card">
-            <h3>Hike / Event Coverage</h3>
-            <div class="price">$000</div>
-            <ul>
-              <li>Up to [X] hours on location</li>
-              <li>[X]+ edited photos</li>
-              <li>Shared gallery for your group</li>
-            </ul>
-          </div>
-          <div class="price-card">
-            <h3>Graduation & Senior Session</h3>
-            <div class="price">$000</div>
-            <ul>
-              <li>[X]-minute session</li>
-              <li>[X] outfit changes / locations</li>
-              <li>[X] edited digital photos</li>
-            </ul>
-          </div>
-          <div class="price-card">
-            <h3>Pet Session</h3>
-            <div class="price">$000</div>
-            <ul>
-              <li>[X]-minute session</li>
-              <li>[X] edited digital photos</li>
-              <li>Online gallery</li>
-            </ul>
+
+        <div class="package-group">
+          <div class="cards">
+            <div class="price-card">
+              <h3>Portrait Sessions</h3>
+              <div class="price">$150</div>
+              <p class="tagline">Perfect for individuals, couples, or creative branding.</p>
+              <ul>
+                <li>1-hour session at 1 outdoor or on-location setting</li>
+                <li>Wardrobe: 1 outfit</li>
+                <li>10–15 fully edited, high-resolution digital images</li>
+                <li>Online gallery delivered within 2 weeks</li>
+              </ul>
+            </div>
+            <div class="price-card">
+              <h3>Graduation & Senior Milestones</h3>
+              <div class="price">$250</div>
+              <p class="tagline">Celebrate your hard work and next big chapter with timeless photos.</p>
+              <ul>
+                <li>1 to 1.5-hour session at your campus or preferred location</li>
+                <li>Wardrobe: Up to 2 outfit changes (including cap, gown, and stoles)</li>
+                <li>15–20 fully edited, high-resolution digital downloads</li>
+                <li>Online gallery delivered within 2 weeks</li>
+              </ul>
+            </div>
+            <div class="price-card">
+              <h3>Pet Portrait Sessions</h3>
+              <div class="price">$125</div>
+              <p class="tagline">For the beloved four-legged members of your family.</p>
+              <ul>
+                <li>45–60 minute session (highly recommended at an outdoor park or open space)</li>
+                <li>A mix of action shots and guided still portraits</li>
+                <li>10 fully edited, high-resolution digital images</li>
+                <li>Online gallery delivered within 2 weeks</li>
+              </ul>
+            </div>
           </div>
         </div>
+
+        <div class="package-group">
+          <div class="cards">
+            <!-- Real Estate pricing hidden for now. Remove this comment to show it again.
+            <div class="price-card">
+              <h3>Real Estate Photography</h3>
+              <div class="price">$100 – $175</div>
+              <p class="tagline">High-quality, wide-angle imagery to help your listing stand out.</p>
+              <ul>
+                <li>$100 for listings up to 1,500 sq ft | $175 for listings up to 2,500 sq ft</li>
+                <li>Full interior and exterior coverage</li>
+                <li>20–25 wide-angle, color-corrected HDR images</li>
+                <li>Fast 24 to 48-hour digital delivery</li>
+              </ul>
+            </div>
+            -->
+            <div class="price-card">
+              <h3>Hikes & Event Coverage</h3>
+              <div class="price">$50 – $90 / hour</div>
+              <p class="tagline">Documentary-style action and candid coverage for community events, group hikes, or small gatherings.</p>
+              <ul>
+                <li>Tiered pricing based on event size/complexity (2-hour booking minimum required)</li>
+                <li>Comprehensive coverage of the trail or venue space</li>
+                <li>Full digital gallery of culled, color-corrected images (approx. 30–40 photos per hour)</li>
+                <li>Online gallery delivered within 7 business days</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <p class="note">Custom projects and multi-service bundles are available. Just ask.</p>
       </div>
     </section>
@@ -463,9 +534,9 @@
         <div class="contact-info">
           <p class="eyebrow">Contact</p>
           <h2>Let's plan your shoot</h2>
-          <p>Tell me a bit about what you have in mind and I'll get back to you within [1–2 business days].</p>
+          <p>Tell me a bit about what you have in mind and I'll get back to you within 1–2 business days.</p>
           <p>
-            <strong>Email:</strong> <a href="mailto:hello@mejia-photography.com">hello@mejia-photography.com</a><br>
+            <strong>Email:</strong> <a href="mailto:Carlos.anthony.mejia@gmail.com">Carlos.anthony.mejia@gmail.com</a><br>
             <strong>Phone:</strong> <a href="tel:+18622100190">862-210-0190</a><br>
             <strong>Instagram:</strong> <a href="https://instagram.com/carlos.mejia.photography" target="_blank" rel="noopener">@carlos.mejia.photography</a>
           </p>
@@ -476,26 +547,29 @@
           Easiest option: create a free form at formspree.io, then replace YOUR_FORM_ID below.
           (Other options: Netlify Forms, Getform, or your host's form feature.)
         -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xrpezwrk" method="POST">
           <div class="row">
             <label>Name <input type="text" name="name" required></label>
             <label>Email <input type="email" name="email" required></label>
           </div>
           <div class="row">
+            <label>Phone <input type="tel" name="phone" required></label>
+            <label>Preferred date <input type="date" name="date" required></label>
+          </div>
+          <div class="row">
             <label>Service
-              <select name="service">
+              <select name="service" required>
                 <option>Portraits</option>
                 <option>Graduation / Senior Portraits</option>
                 <option>Pet Photography</option>
-                <option>Real Estate</option>
                 <option>Hiking / Outdoor Event</option>
                 <option>Something else</option>
               </select>
             </label>
-            <label>Preferred date <input type="date" name="date"></label>
           </div>
-          <label>Message <textarea name="message" rows="5" placeholder="Location, group size, property address, ideas, etc."></textarea></label>
+          <label>Message <textarea name="message" rows="5" placeholder="Location, group size, property address, ideas, etc." required></textarea></label>
           <button class="btn" type="submit">Send inquiry</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
@@ -508,8 +582,8 @@
       <div>© <span id="year"></span> Mejia Photography. All rights reserved.</div>
       <div>
         <a href="https://instagram.com/carlos.mejia.photography" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://facebook.com/yourpage" target="_blank" rel="noopener">Facebook</a>
-        <a href="mailto:hello@mejia-photography.com">Email</a>
+        <a href="tel:+18622100190">862-210-0190</a>
+        <a href="mailto:Carlos.anthony.mejia@gmail.com">Email</a>
       </div>
     </div>
   </footer>
@@ -546,6 +620,33 @@
     }));
     lb.addEventListener('click', () => lb.classList.remove('open'));
     document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
+
+    // Contact form: submit via fetch so we can show a thank-you message without leaving the page
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('formStatus');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.classList.add('sent');
+          formStatus.textContent = "Thanks! Your message is on its way — I'll get back to you within 1–2 business days.";
+          formStatus.className = 'form-status ok';
+        } else {
+          formStatus.textContent = 'Something went wrong sending that. Please try again or email me directly.';
+          formStatus.className = 'form-status err';
+        }
+      } catch (err) {
+        formStatus.textContent = 'Something went wrong sending that. Please try again or email me directly.';
+        formStatus.className = 'form-status err';
+      }
+    });
   </script>
 </body>
 </html>
